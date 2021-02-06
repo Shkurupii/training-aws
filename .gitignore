@@ -30,3 +30,6 @@ override.tf.json
 
 # .idea
 .idea
+
+# tmp
+**/tmp
