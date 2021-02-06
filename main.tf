@@ -8,6 +8,7 @@ variable "bucket_name" {
 
 resource "aws_s3_bucket" "test-bucket" {
   bucket = var.bucket_name
+  region = "us-east-2"
 }
 
 variable "domain_name" {
