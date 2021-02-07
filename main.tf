@@ -22,7 +22,7 @@ resource "aws_acm_certificate" "cert" {
 
 }
 
-data "aws_route53_zone" "primary" {
+data "aws_route53_zone" "dns_zone" {
   name         = var.domain_name
   private_zone = false
 }
@@ -33,7 +33,7 @@ resource "aws_route53_record" "my_record" {
       name    = dvo.resource_record_name
       record  = dvo.resource_record_value
       type    = dvo.resource_record_type
-      zone_id = data.aws_route53_zone.primary.zone_id
+      zone_id = data.aws_route53_zone.dns_zone.zone_id
     }
   }
 
