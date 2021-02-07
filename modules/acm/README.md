@@ -10,7 +10,6 @@
 | Name | Version |
 |------|---------|
 | aws | n/a |
-| terraform | n/a |
 
 ## Inputs
 
