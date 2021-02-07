@@ -1,6 +1,3 @@
-# training-aws
-training-aws
-
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
@@ -13,17 +10,19 @@ training-aws
 | Name | Version |
 |------|---------|
 | aws | n/a |
+| terraform | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | alternative\_names | Alternative Domain Names | `list(string)` | n/a | yes |
-| aws\_ses\_mail\_bucket\_name | S3 Bucket for Amazon SES incoming mails | `string` | n/a | yes |
 | domain\_name | Domain Name | `string` | n/a | yes |
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| cert\_status | Status of the certificate |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
