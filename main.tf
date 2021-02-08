@@ -6,13 +6,13 @@ provider "aws" {
 }
 
 module "acm" {
-  source = "./modules/acm"
+  source = "git::git@github.com:Shkurupii/training-aws-modules.git//modules/acm"
   domain_name = var.domain_name
   alternative_names = var.alternative_names
 }
 
 module "ses" {
-  source = "./modules/ses"
+  source = "git::git@github.com:Shkurupii/training-aws-modules.git//modules/ses"
   domain_name = var.domain_name
   aws_ses_mail_bucket_name = var.aws_ses_mail_bucket_name
 }
