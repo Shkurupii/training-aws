@@ -8,7 +8,6 @@ provider "aws" {
 module "acm" {
   source = "git::git@github.com:Shkurupii/training-aws-modules.git//modules/acm"
   domain_name = var.domain_name
-  alternative_names = var.alternative_names
 }
 
 module "ses" {
