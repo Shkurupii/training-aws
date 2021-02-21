@@ -10,8 +10,16 @@ provider "aws" {
   }
 }
 
+module "tags" {
+  source = "git::git@github.com:Shkurupii/training-aws-modules.git//modules/tags"
+  username = "develop"
+  environment = "dev"
+  workspace = "workspace"
+}
+
 resource "aws_s3_bucket" "develop-s3" {
   provider = aws.develop
   force_destroy = true
   bucket_prefix = "develop-s3-"
+  tags = module.tags.all_tags
 }
