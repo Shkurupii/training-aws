@@ -53,6 +53,7 @@ resource "aws_iam_policy" "assume_role_policy" {
 # Create a user
 resource "aws_iam_user" "assume_role_user" {
   name = var.assume_role_user
+  tags = module.tags.all_tags
 }
 
 # Create a key
