@@ -80,10 +80,3 @@ resource "aws_secretsmanager_secret_version" "assume_role_user_keys_version" {
     secret = aws_iam_access_key.assume_role_user_key.secret
   })
 }
-
-provider "aws" {
-  alias = "develop"
-  assume_role {
-    role_arn = var.assume_role_arn
-  }
-}
