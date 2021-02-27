@@ -7,6 +7,11 @@ terraform {
 provider "aws" {
 }
 
+data "aws_route53_zone" "dns_zone" {
+  name = var.domain_name
+  private_zone = false
+}
+
 module "acm" {
   source = "git::git@github.com:Shkurupii/training-aws-modules.git//modules/acm"
   domain_name = var.domain_name
