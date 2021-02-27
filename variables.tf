@@ -12,3 +12,28 @@ variable "cloud_front_origin_name" {
   type = string
   description = "S3 bucket name for Cloudfront"
 }
+
+variable "assume_role_arn" {
+  type = string
+  description = "Assume role ARN"
+}
+
+variable "assume_role_user" {
+  type = string
+  description = "Assume role user"
+}
+
+variable "workspace" {
+  type = string
+  description = "Terraform workspace"
+}
+
+variable "environment" {
+  type = string
+  description = "Environment name"
+}
+
+variable "username" {
+  type = string
+  description = "User name"
+}

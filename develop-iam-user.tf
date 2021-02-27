@@ -1,35 +1,3 @@
-variable "assume_role_arn" {
-  type = string
-  description = "Assume role ARN"
-}
-
-variable "assume_role_user" {
-  type = string
-  description = "Assume role user"
-}
-
-variable "workspace" {
-  type = string
-  description = "Terraform workspace"
-}
-
-variable "environment" {
-  type = string
-  description = "Environment name"
-}
-
-variable "username" {
-  type = string
-  description = "User name"
-}
-
-module "tags" {
-  source = "git::git@github.com:Shkurupii/training-aws-modules.git//modules/tags"
-  username = var.username
-  environment = var.environment
-  workspace = var.workspace
-}
-
 data "aws_iam_policy_document" "assume_role_policy_document" {
   version = "2012-10-17"
   statement {
@@ -40,7 +8,6 @@ data "aws_iam_policy_document" "assume_role_policy_document" {
       var.assume_role_arn]
   }
 }
-
 
 resource "random_pet" "assume_role" {}
 
