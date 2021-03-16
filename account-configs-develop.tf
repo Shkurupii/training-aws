@@ -1,11 +1,16 @@
+variable "develop_account_id" {
+  default = ""
+}
+
 locals {
+  develop_assume_role_arn = "arn:aws:iam::${var.develop_account_id}:role/OrganizationAccountAccessRole"
   account_subdomain = "dev.${var.domain_name}"
 }
 
 provider "aws" {
   alias = "develop"
   assume_role {
-    role_arn = var.assume_role_arn
+    role_arn = local.develop_assume_role_arn
   }
 }
 

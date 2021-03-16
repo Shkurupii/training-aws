@@ -13,11 +13,6 @@ variable "cloud_front_origin_name" {
   description = "S3 bucket name for Cloudfront"
 }
 
-variable "assume_role_arn" {
-  type = string
-  description = "Assume role ARN"
-}
-
 variable "assume_role_user" {
   type = string
   description = "Assume role user"

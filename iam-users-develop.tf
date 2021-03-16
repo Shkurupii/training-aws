@@ -5,7 +5,7 @@ data "aws_iam_policy_document" "assume_role_policy_document" {
     actions = [
       "sts:AssumeRole"]
     resources = [
-      var.assume_role_arn]
+      local.develop_assume_role_arn]
   }
 }
 
