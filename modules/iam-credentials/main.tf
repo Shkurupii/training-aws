@@ -36,7 +36,7 @@ resource "aws_iam_user_policy_attachment" "assume_role_user_attachment" {
 
 # Create a secret
 resource "aws_secretsmanager_secret" "assume_role_user_keys" {
-  name = "${aws_iam_user.assume_role_user.name}-iam-keys"
+  name_prefix = "${aws_iam_user.assume_role_user.name}-iam-keys-"
   recovery_window_in_days = 7
 }
 
