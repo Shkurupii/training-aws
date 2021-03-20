@@ -21,6 +21,7 @@ resource "aws_iam_policy" "assume_role_policy" {
 # Create a user
 resource "aws_iam_user" "assume_role_user" {
   name = var.account_user
+  force_destroy = true
 }
 
 # Create a key
